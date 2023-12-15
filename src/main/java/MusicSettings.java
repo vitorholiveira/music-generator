@@ -10,26 +10,32 @@ public class MusicSettings {
     }
 
     public void setBpm(int bpm){
+
         this.bpm = bpm;
     }
 
     public void setTimbre(int timbre){
+
         this.timbre = timbre;
     }
 
     public void setFirstInstrument(String firstInstrument){
-        this.firstInstrument = firstInstrument;
+        t
+    his.firstInstrument = firstInstrument;
     }
 
     public int getBpm(){
+
         return this.bpm;
     }
 
     public int getTimbre(){
+
         return this.timbre;
     }
 
     public String getFirstInstrument(){
+
         return this.firstInstrument;
     }
 

@@ -3,12 +3,14 @@ public class MusicPlayer
     private Music music;
     private long currentTime;
     private boolean play;
+    private int volume;
 
     public MusicPlayer(Music music)
     {
         this.music = music;
         this.currentTime = 0;
         this.play = false;
+        this.volume = 20;
     }
 
     public void play()
@@ -39,6 +41,16 @@ public class MusicPlayer
     {
         //TODO
         // SET THE TIME OF THE MUSIC
+    }
+
+    public int getVolume()
+    {
+        return this.volume;
+    }
+
+    public void setVolume(int vol)
+    {
+        this.volume = vol;
     }
 
 }

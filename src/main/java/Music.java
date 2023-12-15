@@ -3,20 +3,18 @@ public class Music
     //JFUGUE
     private MusicSettings settings;
     private String text;
-    private int volume;
     private Pattern[] music_generator; // PATTERN IS A JFUGUE CLASS
 
     public Music(MusicSettings settings, String text)
     {
         this.settings = settings;
         this.text = text;
-        this.volume = 20;
     }
 
     public void generate()
     {
         // TODO
-        // GENERATE A MUSIC PERSONALIZED BY THE USER, AS A LIST OF PATTERNS
+        // GENERATE A MUSIC PERSONALIZED BY THE USER AS A LIST OF PATTERNS (OF JFUGUE LIBRARY)
 
     }
     public void save(String path)
