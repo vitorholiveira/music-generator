@@ -20,8 +20,7 @@ public class MusicSettings {
     }
 
     public void setFirstInstrument(String firstInstrument){
-        t
-    his.firstInstrument = firstInstrument;
+        this.firstInstrument = firstInstrument;
     }
 
     public int getBpm(){

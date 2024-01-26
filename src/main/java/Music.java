@@ -25,10 +25,12 @@ public class Music
 
     public String getText()
     {
+
         return this.text;
     }
     public void setText(String text)
     {
+
         this.text = text;
     }
 
@@ -38,6 +40,12 @@ public class Music
     }
     public void setSettings(MusicSettings settings)
     {
+
         this.settings = settings;
+    }
+
+    public Pattern[] getPattern() {
+
+        return this.music_generator;
     }
 }

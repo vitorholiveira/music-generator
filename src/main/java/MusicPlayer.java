@@ -3,6 +3,7 @@ public class MusicPlayer
     private Music music;
     private long currentTime;
     private boolean play;
+    private Player player;
     private int volume;
 
     public MusicPlayer(Music music)
@@ -11,12 +12,14 @@ public class MusicPlayer
         this.currentTime = 0;
         this.play = false;
         this.volume = 20;
+        this.player = new Player();
     }
 
     public void play()
     {
-        // TODO
-        // START PLAYING MUSIC
+        for (int i = 0; i < this.music.getPattern(i); i++) {
+
+        }
     }
 
     public void pause()
