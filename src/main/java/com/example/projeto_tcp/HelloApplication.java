@@ -12,10 +12,10 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Player player = new Player();
-        String text = "+??????????";
-        Music mainMusic = new Music(new MusicSettings(150, 0, "Trombone", 40), text);
+        String text = "+FGBBPM+AABPM-FDddBPM-CEDDC";
+        Music mainMusic = new Music(new MusicSettings(140, 0, "Trombone", 40), text);
         mainMusic.generate();
-        player.play(mainMusic.getPattern())
+        player.play(mainMusic.getPattern());
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
         stage.setTitle("Music Generator");

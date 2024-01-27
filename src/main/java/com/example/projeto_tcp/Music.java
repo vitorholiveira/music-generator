@@ -29,6 +29,8 @@ public class Music
             if (newSymbol.equals("BPM+")){
                 i+=3;
                 patternText+=setBPMPattern();
+            } else if (newSymbol.equals("BPM-")) {
+                patternText+=setBPMPattern();
             } else if (newSymbol.equals("V")) {
                 patternText+=setVolumePattern();
             } else if (newSymbol.equals("T")) {
@@ -46,39 +48,54 @@ public class Music
     public String mapping(char character, int index)
     {
         character = Character.toUpperCase(character);
-        if (character == 'B' && text.substring(index+1, index+4).equals("PM+")){
-            getSettings().setBpm(getSettings().getBpm()+80);
-            return "BPM+";
-        } else if (character=='+'){
-            if (getSettings().getVolume()*2 > 127){
-                getSettings().setVolume(127);
-            } else{
-                getSettings().setVolume(getSettings().getVolume()*2);
-            }
-            return "V";
-        }else if (character=='-') {
-            getSettings().setVolume(getDefaultSettings().getVolume());
-            return "V";
-        } else if (character==' ') {
-            return "R ";
-        } else if (character=='?') {
-            Random random = new Random();
-            int indiceSorteado = random.nextInt(Symbol.G.getAsciiValue() - Symbol.A.getAsciiValue() +1);
-            return Character.toString((char) (Symbol.A.getAsciiValue()+indiceSorteado))+" ";
-        } else if (character=='O' || character=='I' || character=='U') {
-            char prevChar = Character.toUpperCase(text.charAt(index-1));
-            if (prevChar >= Symbol.A.getAsciiValue() && prevChar <= Symbol.G.getAsciiValue()){
-                return Character.toString(prevChar)+" ";
-            } else {
-                return "T";
-            }
-        } else if (character==';') {
-            Random random = new Random();
-            int indiceSorteado = random.nextInt(400);
-            getSettings().setBpm(indiceSorteado);
-            return "BPM+";
-        } else if (character >= Symbol.A.getAsciiValue() && character <= Symbol.G.getAsciiValue()){
-            return Character.toString(character)+" ";
+        switch (character){
+            case ('B'):
+                if (text.length() >= index+4 && text.substring(index+1, index+4).equals("PM+")){
+                    getSettings().setBpm(getSettings().getBpm()+80);
+                    return "BPM+";
+                } else if (text.length() >= index+4 && text.substring(index+1, index+4).equals("PM-")) {
+                    getSettings().setBpm(getSettings().getBpm()-80);
+                    return "BPM+";
+                } else {
+                    return Character.toString(character)+" ";
+                }
+            case('A'):
+            case('C'):
+            case('D'):
+            case('E'):
+            case('F'):
+            case('G'):
+                return Character.toString(character)+" ";
+            case('+'):
+                if (getSettings().getVolume()*2 > 127){
+                    getSettings().setVolume(127);
+                } else{
+                    getSettings().setVolume(getSettings().getVolume()*2);
+                }
+                return "V";
+            case('-'):
+                getSettings().setVolume(getDefaultSettings().getVolume());
+                return "V";
+            case(' '):
+                return "R ";
+            case('?'):
+                Random random = new Random();
+                int indiceSorteado = random.nextInt(Symbol.G.getAsciiValue() - Symbol.A.getAsciiValue() +1);
+                return Character.toString((char) (Symbol.A.getAsciiValue()+indiceSorteado))+" ";
+            case('O'):
+            case('I'):
+            case('U'):
+                char prevChar = Character.toUpperCase(text.charAt(index-1));
+                if (prevChar >= Symbol.A.getAsciiValue() && prevChar <= Symbol.G.getAsciiValue()){
+                    return Character.toString(prevChar)+" ";
+                } else {
+                    return "T";
+                }
+            case(';'):
+                random = new Random();
+                indiceSorteado = random.nextInt(400);
+                getSettings().setBpm(indiceSorteado);
+                return "BPM-";
         }
         return "";
     }
