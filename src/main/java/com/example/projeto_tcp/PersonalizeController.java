@@ -12,9 +12,7 @@ import java.util.ResourceBundle;
 public class PersonalizeController implements Initializable {
 
     private String[] rhythms_list = {"A","B","C"};
-    private String[] instruments_list = {"A","B","C"};
-    private String[] timbre_list = {"A","B","C"};
-
+    private String[] instruments_list = {"Banjo","Piano","Marimba","Guitar",""};
 
 
     @FXML
@@ -24,9 +22,6 @@ public class PersonalizeController implements Initializable {
     private ChoiceBox<String> rhythm;
 
     @FXML
-    private ChoiceBox<String> timbre;
-
-    @FXML
     void getPersonalized(MouseEvent event) {
 
     }
@@ -34,8 +29,7 @@ public class PersonalizeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         rhythm.getItems().addAll(rhythms_list);
-        timbre.getItems().addAll(instruments_list);
-        instrument.getItems().addAll(timbre_list);
+        instrument.getItems().addAll(instruments_list);
 
     }
 

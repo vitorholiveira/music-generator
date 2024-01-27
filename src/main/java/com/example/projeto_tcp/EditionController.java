@@ -17,11 +17,13 @@ public class EditionController {
     private Button nextButton;
 
     @FXML
+    // btEditionBack() ->  change the Screen from "Edition Screen" to "Home Screen" when the "Back Button" is Pressed
     void btEditionBack(ActionEvent event) {
         HomeApplication.changeScreen(ScreenNavigation.HOME);
     }
 
     @FXML
+    // btPersonalizedMusic() -> change the Screen from "Edition Screen" to "Personalize Screen" when the "Next Button" is Pressed
     void btPersonalizeMusic(ActionEvent event) {
         HomeApplication.changeScreen(ScreenNavigation.PERSONALIZE);
     }

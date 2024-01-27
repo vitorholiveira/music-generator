@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -18,11 +19,11 @@
                 <Button layoutX="601.0" layoutY="441.0" mnemonicParsing="false" onAction="#btListenMusic" onMouseClicked="#getPersonalized" prefHeight="25.0" prefWidth="95.0" text="Generate" />
                 <Button layoutX="601.0" layoutY="564.0" mnemonicParsing="false" onAction="#btPersonalizeBack" prefHeight="25.0" prefWidth="95.0" text="Back" />
             <ChoiceBox fx:id="rhythm" layoutX="251.0" layoutY="255.0" prefWidth="150.0" />
-            <ChoiceBox fx:id="timbre" layoutX="565.0" layoutY="255.0" prefWidth="150.0" />
             <ChoiceBox fx:id="instrument" layoutX="879.0" layoutY="255.0" prefWidth="150.0" />
             <Label layoutX="288.0" layoutY="225.0" text="Rhythm (BPM)" />
-            <Label layoutX="626.0" layoutY="225.0" text="Timbre" />
+            <Label layoutX="626.0" layoutY="225.0" text="Volume" />
             <Label layoutX="913.0" layoutY="225.0" text="First Instrument" />
+            <TextField layoutX="574.0" layoutY="255.0" />
             </children>
         </AnchorPane>
     </children>

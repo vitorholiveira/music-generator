@@ -58,6 +58,7 @@ public class HomeApplication extends Application {
         primaryStage.show();
     }
 
+    // changeScreen() -> It changes the Screen's Stages
     public static void changeScreen(ScreenNavigation screen){
         switch (screen){
             case ScreenNavigation.HOME:
