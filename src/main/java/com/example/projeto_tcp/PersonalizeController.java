@@ -11,10 +11,6 @@ import java.util.ResourceBundle;
 
 public class PersonalizeController implements Initializable {
 
-    private String[] rhythms_list = {"A","B","C"};
-    private String[] instruments_list = {"Banjo","Piano","Marimba","Guitar",""};
-
-
     @FXML
     private ChoiceBox<String> instrument;
 
@@ -28,9 +24,7 @@ public class PersonalizeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        rhythm.getItems().addAll(rhythms_list);
-        instrument.getItems().addAll(instruments_list);
-
+        instrument.getItems().addAll(Instruments.getInstrumentsList());
     }
 
     @FXML

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto_tcp.PersonalizeController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto_tcp.PersonalizeController">
     <children>
         <AnchorPane layoutY="-9.0" prefHeight="720.0" prefWidth="1280.0">
             <children>
@@ -18,12 +18,12 @@
                 </Label>
                 <Button layoutX="601.0" layoutY="441.0" mnemonicParsing="false" onAction="#btListenMusic" onMouseClicked="#getPersonalized" prefHeight="25.0" prefWidth="95.0" text="Generate" />
                 <Button layoutX="601.0" layoutY="564.0" mnemonicParsing="false" onAction="#btPersonalizeBack" prefHeight="25.0" prefWidth="95.0" text="Back" />
-            <ChoiceBox fx:id="rhythm" layoutX="251.0" layoutY="255.0" prefWidth="150.0" />
             <ChoiceBox fx:id="instrument" layoutX="879.0" layoutY="255.0" prefWidth="150.0" />
             <Label layoutX="288.0" layoutY="225.0" text="Rhythm (BPM)" />
             <Label layoutX="626.0" layoutY="225.0" text="Volume" />
             <Label layoutX="913.0" layoutY="225.0" text="First Instrument" />
             <TextField layoutX="574.0" layoutY="255.0" />
+            <TextField layoutX="250.0" layoutY="255.0" />
             </children>
         </AnchorPane>
     </children>
