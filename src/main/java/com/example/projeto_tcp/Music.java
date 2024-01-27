@@ -1,10 +1,14 @@
+package com.example.projeto_tcp;
+
+import com.example.projeto_tcp.MusicSettings;
+
 public class Music
 {
     //JFUGUE
     private MusicSettings settings;
     private String text;
     private int volume;
-    private Pattern[] music_generator; // PATTERN IS A JFUGUE CLASS
+    //private Pattern[] music_generator; // PATTERN IS A JFUGUE CLASS
 
     public Music(MusicSettings settings, String text)
     {
