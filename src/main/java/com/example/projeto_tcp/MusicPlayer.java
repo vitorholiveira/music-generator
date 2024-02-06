@@ -1,5 +1,5 @@
 package com.example.projeto_tcp;
-
+import java.util.UUID;
 import org.jfugue.player.Player;
 
 public class MusicPlayer
@@ -17,6 +17,9 @@ public class MusicPlayer
         this.player = new Player();
     }
 
+    public static String getRandomText(){
+        return UUID.randomUUID().toString();
+    }
     public void play()
     {
     }

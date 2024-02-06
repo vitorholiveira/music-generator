@@ -1,41 +1,48 @@
 package com.example.projeto_tcp;
 
+import org.jfugue.midi.MidiFileManager;
 import org.jfugue.pattern.Pattern;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Music
 {
-    //JFUGUE
     private MusicSettings defaultSettings;
     private MusicSettings settings;
     private String text;
-    private Pattern music_generator; // PATTERN IS A JFUGUE CLASS
+    private Pattern music_generator;
 
 
     public Music(MusicSettings settings, String text)
     {
-        this.defaultSettings = new MusicSettings(settings.getBpm(),settings.getTimbre(),settings.getInstrument(),settings.getVolume());
-        this.settings = new MusicSettings(settings.getBpm(),settings.getTimbre(),settings.getInstrument(),settings.getVolume());
+        this.defaultSettings = new MusicSettings(settings.getBpm(),settings.getTimbre(),settings.getInstrument(),settings.getVolume(), settings.getOctave());
+        this.settings = new MusicSettings(settings.getBpm(),settings.getTimbre(),settings.getInstrument(),settings.getVolume(), settings.getOctave());
         this.text = text;
     }
 
     public void generate()
     {
-        String patternText = setVolumePattern()+setBPMPattern()+setInstrumentPattern();
+        String patternText = setPatternVolume()+setPatternBPM()+setPatternInstrument();
         for (int i = 0; i < text.length(); i++) {
             String newSymbol = mapping(text.charAt(i) ,i);
             if (newSymbol.equals("BPM+")){
                 i+=3;
-                patternText+=setBPMPattern();
+                patternText+=setPatternBPM();
             } else if (newSymbol.equals("BPM-")) {
-                patternText+=setBPMPattern();
+                patternText+=setPatternBPM();
             } else if (newSymbol.equals("V")) {
-                patternText+=setVolumePattern();
+                patternText+=setPatternVolume();
             } else if (newSymbol.equals("T")) {
                 patternText+="I[Telephone_Ring] A ";
-                patternText+=setInstrumentPattern();
+                patternText+=setPatternInstrument();
+            } else if (newSymbol.equals("I")) {
+                i++;
+                patternText+=setPatternInstrument();
+            } else if (newSymbol.equals("R")) {
+                i++;
             } else {
                 patternText+=newSymbol;
             }
@@ -47,17 +54,23 @@ public class Music
 
     public String mapping(char character, int index)
     {
+        int indiceSorteado;
         character = Character.toUpperCase(character);
+        Random random = new Random();
         switch (character){
             case ('B'):
-                if (text.length() >= index+4 && text.substring(index+1, index+4).equals("PM+")){
-                    getSettings().setBpm(getSettings().getBpm()+80);
-                    return "BPM+";
-                } else if (text.length() >= index+4 && text.substring(index+1, index+4).equals("PM-")) {
-                    getSettings().setBpm(getSettings().getBpm()-80);
-                    return "BPM+";
+                if (text.length() >= index+4){
+                    if (text.substring(index+1, index+4).equals("PM+")) {
+                        settings.setBpm(settings.getBpm() + 80);
+                        return "BPM+";
+                    } else if (text.substring(index+1, index+4).equals("PM-")) {
+                        settings.setBpm(settings.getBpm() - 80);
+                        return "BPM+";
+                    } else {
+                        return SetPatternNote(character);
+                    }
                 } else {
-                    return Character.toString(character)+" ";
+                    return SetPatternNote(character);
                 }
             case('A'):
             case('C'):
@@ -65,44 +78,61 @@ public class Music
             case('E'):
             case('F'):
             case('G'):
-                return Character.toString(character)+" ";
+                return SetPatternNote(character);
             case('+'):
-                if (getSettings().getVolume()*2 > 127){
-                    getSettings().setVolume(127);
+                if (settings.getVolume()*2 > 127){
+                    settings.setVolume(127);
                 } else{
-                    getSettings().setVolume(getSettings().getVolume()*2);
+                    settings.setVolume(settings.getVolume()*2);
                 }
                 return "V";
             case('-'):
-                getSettings().setVolume(getDefaultSettings().getVolume());
+                settings.setVolume(getDefaultSettings().getVolume());
                 return "V";
             case(' '):
                 return "R ";
             case('?'):
-                Random random = new Random();
-                int indiceSorteado = random.nextInt(Symbol.G.getAsciiValue() - Symbol.A.getAsciiValue() +1);
-                return Character.toString((char) (Symbol.A.getAsciiValue()+indiceSorteado))+" ";
+                indiceSorteado = random.nextInt(Symbol.G.getAsciiValue() - Symbol.A.getAsciiValue() +1);
+                return SetPatternNote((char) (Symbol.A.getAsciiValue()+indiceSorteado));
             case('O'):
             case('I'):
             case('U'):
                 char prevChar = Character.toUpperCase(text.charAt(index-1));
                 if (prevChar >= Symbol.A.getAsciiValue() && prevChar <= Symbol.G.getAsciiValue()){
-                    return Character.toString(prevChar)+" ";
+                    return SetPatternNote(prevChar);
                 } else {
                     return "T";
                 }
             case(';'):
-                random = new Random();
                 indiceSorteado = random.nextInt(400);
-                getSettings().setBpm(indiceSorteado);
+                settings.setBpm(indiceSorteado);
                 return "BPM-";
+            case('\n'):
+                if (text.length() >= index+1) {
+                    String instrument = Instrument.getInstrument(text.charAt(index + 1));
+                    settings.setInstrument(instrument);
+                    return "I";
+                }
+            case('R'):
+                if (text.length() >= index+1){
+                    if(text.charAt(index + 1) == '+' && settings.getOctave()<10){
+                        settings.setOctave(settings.getOctave()+1);
+                        return "R";
+                    } else if (text.charAt(index + 1) == '-' && settings.getOctave() > 0) {
+                        settings.setOctave(settings.getOctave()-1);
+                        return "R";
+                    }
+                }
         }
         return "";
     }
-    public void save(String path)
-    {
-        // TODO
-        // SAVE THE MUSIC GENERATED BY THE USER IN THE PATH PARAMETER
+    public void save(String path){
+        try {
+            File filePath = new File("/musics/music.midi");
+            MidiFileManager.savePatternToMidi(getPattern(), filePath);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public String getText()
@@ -132,15 +162,19 @@ public class Music
         return this.music_generator;
     }
 
-    public String setVolumePattern(){
+    public String setPatternVolume(){
         return ":CON(7, "+ Integer.toString(getSettings().getVolume()) +") ";
     }
 
-    public String setBPMPattern(){
+    public String setPatternBPM(){
         return "T"+ Integer.toString(getSettings().getBpm()) +" ";
     }
 
-    public String setInstrumentPattern(){
+    public String setPatternInstrument(){
         return "I["+ getSettings().getInstrument() +"] ";
+    }
+
+    public String SetPatternNote(char note){
+        return Character.toString(note)+Integer.toString(getSettings().getOctave())+" ";
     }
 }

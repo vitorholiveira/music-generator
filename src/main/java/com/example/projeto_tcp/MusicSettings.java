@@ -5,12 +5,14 @@ public class MusicSettings {
     private int timbre;
     private String Instrument;
     private int volume;
+    private int octave;
 
-    public MusicSettings(int bpm, int timbre, String firstInstrument, int volume){
+    public MusicSettings(int bpm, int timbre, String firstInstrument, int volume, int octave){
         this.bpm = bpm;
         this.timbre = timbre;
         this.Instrument = firstInstrument;
         this.volume = volume;
+        this.octave = octave;
     }
 
     public void setBpm(int bpm){
@@ -50,5 +52,13 @@ public class MusicSettings {
     public int getVolume(){
 
         return this.volume;
+    }
+
+    public int getOctave() {
+        return octave;
+    }
+
+    public void setOctave(int octave) {
+        this.octave = octave;
     }
 }
