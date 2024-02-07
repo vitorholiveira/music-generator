@@ -66,7 +66,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.projeto_tcp/com.example.projeto_tcp.HelloApplication</mainClass>
+                            <mainClass>com.example.projeto_tcp/com.example.projeto_tcp.HomeApplication</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
