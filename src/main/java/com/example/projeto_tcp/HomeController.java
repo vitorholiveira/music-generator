@@ -74,7 +74,7 @@ public class HomeController {
                 fileReader.close();
 
                 HomeApplication.setText(content.toString());
-                HomeApplication.changeScreen(ScreenNavigation.EDITION);
+                HomeApplication.changeScreen(ScreenNavigation.PERSONALIZE);
 
             } catch (IOException e) {
                 e.printStackTrace();

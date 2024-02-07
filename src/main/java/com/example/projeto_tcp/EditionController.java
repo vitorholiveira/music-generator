@@ -25,6 +25,8 @@ public class EditionController {
     @FXML
     // btPersonalizedMusic() -> change the Screen from "Edition Screen" to "Personalize Screen" when the "Next Button" is Pressed
     void btPersonalizeMusic(ActionEvent event) {
+        String text = myTextField.getText();
+        HomeApplication.setText(text);
         HomeApplication.changeScreen(ScreenNavigation.PERSONALIZE);
     }
 

@@ -5,22 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0874c03a-9d34-4d42-b305-e9413e38d100" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/EditionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/EditionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/HomeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/HomeApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/EditionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/HomeApplication$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/HomeApplication$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/HomeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/HomeApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/PersonalizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/PersonalizeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projeto_tcp/personalize-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projeto_tcp/personalize-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/ListenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/ListenController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/Music.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/Music.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/MusicPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/MusicPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/MusicSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/MusicSettings.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/PersonalizeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/PersonalizeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/ScreenNavigation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/ScreenNavigation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/personalize-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/personalize-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
