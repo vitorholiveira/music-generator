@@ -1,3 +1,5 @@
+package com.example.projeto_tcp;
+
 public class MusicPlayer
 {
     private Music music;

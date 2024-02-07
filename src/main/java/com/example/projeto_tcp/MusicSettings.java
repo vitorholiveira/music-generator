@@ -1,3 +1,5 @@
+package com.example.projeto_tcp;
+
 public class MusicSettings {
     private int bpm;
     private int timbre;
