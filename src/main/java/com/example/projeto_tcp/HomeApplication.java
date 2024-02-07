@@ -27,6 +27,7 @@ public class HomeApplication extends Application {
     private static Scene editionScene;
     private static Scene listenScene;
 
+    private static String text;
     // INITIALIZATION
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -74,6 +75,15 @@ public class HomeApplication extends Application {
                 stage.setScene(listenScene);
         }
     }
+
+    public static void setText(String txt){
+        text = txt;
+    }
+
+    public static String getText(){
+        return text;
+    }
+
     public static void main(String[] args) {
         launch();
     }
