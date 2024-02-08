@@ -1,12 +1,8 @@
 package com.example.projeto_tcp;
 
-import org.jfugue.midi.MidiFileManager;
 import org.jfugue.pattern.Pattern;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Music
 {
@@ -25,45 +21,44 @@ public class Music
 
     public void generate()
     {
-        String patternText = setPatternVolume()+setPatternBPM()+setPatternInstrument();
+        StringBuilder patternText = new StringBuilder(setPatternVolume() + setPatternBPM() + setPatternInstrument());
         for (int i = 0; i < text.length(); i++) {
             String newSymbol = mapping(text.charAt(i) ,i);
             if (newSymbol.equals("BPM+")){
                 i+=3;
-                patternText+=setPatternBPM();
+                patternText.append(setPatternBPM());
             } else if (newSymbol.equals("BPM-")) {
-                patternText+=setPatternBPM();
+                patternText.append(setPatternBPM());
             } else if (newSymbol.equals("V")) {
-                patternText+=setPatternVolume();
+                patternText.append(setPatternVolume());
             } else if (newSymbol.equals("T")) {
-                patternText+="I[Telephone_Ring] A ";
-                patternText+=setPatternInstrument();
+                patternText.append("I[Telephone_Ring] A ");
+                patternText.append(setPatternInstrument());
             } else if (newSymbol.equals("I")) {
                 i++;
-                patternText+=setPatternInstrument();
+                patternText.append(setPatternInstrument());
             } else if (newSymbol.equals("R")) {
                 i++;
             } else {
-                patternText+=newSymbol;
+                patternText.append(newSymbol);
             }
 
         }
-        Pattern newPattern = new Pattern(patternText);
-        music_generator =  newPattern;
+        music_generator = new Pattern(patternText.toString());
     }
 
     public String mapping(char character, int index)
     {
-        int indiceSorteado;
+        int sortedIndex;
         character = Character.toUpperCase(character);
         Random random = new Random();
         switch (character){
             case ('B'):
                 if (text.length() >= index+4){
-                    if (text.substring(index+1, index+4).equals("PM+")) {
+                    if (text.startsWith("PM+", index+1)) {
                         settings.setBpm(settings.getBpm() + 80);
                         return "BPM+";
-                    } else if (text.substring(index+1, index+4).equals("PM-")) {
+                    } else if (text.startsWith("PM-", index+1)) {
                         settings.setBpm(settings.getBpm() - 80);
                         return "BPM+";
                     } else {
@@ -92,8 +87,8 @@ public class Music
             case(' '):
                 return "R ";
             case('?'):
-                indiceSorteado = random.nextInt(Symbol.G.getAsciiValue() - Symbol.A.getAsciiValue() +1);
-                return SetPatternNote((char) (Symbol.A.getAsciiValue()+indiceSorteado));
+                sortedIndex = random.nextInt(Symbol.G.getAsciiValue() - Symbol.A.getAsciiValue() +1);
+                return SetPatternNote((char) (Symbol.A.getAsciiValue()+sortedIndex));
             case('O'):
             case('I'):
             case('U'):
@@ -104,8 +99,8 @@ public class Music
                     return "T";
                 }
             case(';'):
-                indiceSorteado = random.nextInt(400);
-                settings.setBpm(indiceSorteado);
+                sortedIndex = random.nextInt(400);
+                settings.setBpm(sortedIndex);
                 return "BPM-";
             case('\n'):
                 if (text.length() >= index+1) {

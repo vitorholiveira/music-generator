@@ -5,20 +5,25 @@ import java.util.UUID;
 
 import org.jfugue.midi.MidiFileManager;
 import org.jfugue.player.Player;
+
+import javax.sound.midi.InvalidMidiDataException;
+import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Sequence;
 
 public class MusicPlayer
 {
     private Music music;
     //private long currentTime;
-    private boolean play;
+    private boolean isPlay;
+    private boolean isPause;
     private Player player;
     private Sequence sequence;
 
     public MusicPlayer(Music music)
     {
         this.music = music;
-        this.play = false;
+        this.isPlay = false;
+        this.isPause = false;
         this.player = new Player();
         this.sequence = this.player.getSequence(music.getPattern());
     }
@@ -31,14 +36,37 @@ public class MusicPlayer
         return sequence;
     }
 
-    public void play()
-    {
-        this.play = true;
+    public boolean isPlay() {
+        return isPlay;
+    }
+
+    public boolean isPause() {
+        return isPause;
+    }
+
+    public boolean isFinished() {
+        return player.getManagedPlayer().isFinished();
+    }
+
+    public void start() throws InvalidMidiDataException, MidiUnavailableException {
+        player.getManagedPlayer().start(sequence);
+        this.isPlay = true;
+    }
+
+    public void finish() throws InvalidMidiDataException, MidiUnavailableException {
+        this.isPlay = false;
     }
 
     public void pause()
     {
-        this.play = false;
+        player.getManagedPlayer().pause();
+        this.isPause = true;
+    }
+
+    public void resume()
+    {
+        player.getManagedPlayer().resume();
+        this.isPause = false;
     }
 
     public void save(String path){
@@ -48,6 +76,4 @@ public class MusicPlayer
             ex.printStackTrace();
         }
     }
-
-
 }
