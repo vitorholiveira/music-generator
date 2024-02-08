@@ -1,6 +1,6 @@
 package com.example.projeto_tcp;
 
-public class Instruments {
+public class Instrument {
     // Constantes dos instrumentos (Strings)
     public static final String BANJO = "Banjo";
     public static final String PIANO = "Piano";

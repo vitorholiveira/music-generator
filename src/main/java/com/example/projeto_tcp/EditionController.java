@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 
 public class EditionController {
 
@@ -11,21 +12,22 @@ public class EditionController {
     private Button BackButton;
 
     @FXML
-    private TextField myTextField;
+    private TextArea myTextArea;
 
     @FXML
     private Button nextButton;
 
+
     @FXML
-    // btEditionBack() ->  change the Screen from "Edition Screen" to "Home Screen" when the "Back Button" is Pressed
+        // btEditionBack() ->  change the Screen from "Edition Screen" to "Home Screen" when the "Back Button" is Pressed
     void btEditionBack(ActionEvent event) {
         HomeApplication.changeScreen(ScreenNavigation.HOME);
     }
 
     @FXML
-    // btPersonalizedMusic() -> change the Screen from "Edition Screen" to "Personalize Screen" when the "Next Button" is Pressed
+        // btPersonalizedMusic() -> change the Screen from "Edition Screen" to "Personalize Screen" when the "Next Button" is Pressed
     void btPersonalizeMusic(ActionEvent event) {
-        String text = myTextField.getText();
+        String text = myTextArea.getText();
         HomeApplication.setText(text);
         HomeApplication.changeScreen(ScreenNavigation.PERSONALIZE);
     }

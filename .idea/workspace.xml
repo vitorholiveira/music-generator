@@ -7,12 +7,25 @@
     <list default="true" id="0874c03a-9d34-4d42-b305-e9413e38d100" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/EditionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/EditionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/HomeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/HomeApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/Instruments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/Instrument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/ListenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/ListenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/Music.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/Music.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/MusicPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/MusicSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/MusicSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/PersonalizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_tcp/PersonalizeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projeto_tcp/personalize-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projeto_tcp/personalize-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projeto_tcp/edition-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projeto_tcp/edition-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projeto_tcp/listen-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projeto_tcp/listen-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/ListenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/ListenController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/Music.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/Music.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/MusicPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/MusicPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/MusicSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/MusicSettings.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/PersonalizeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/PersonalizeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/personalize-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/personalize-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/ScreenNavigation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projeto_tcp/ScreenNavigation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,13 +66,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "interface",
+    "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/opt/SceneBuilder/SceneBuilder",
+    "last_opened_file_path": "C:/Users/thoma/AppData/Local/SceneBuilder/SceneBuilder.exe",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.7252874",
     "settings.editor.selected.configurable": "preferences.JavaFX"
   }
 }]]></component>

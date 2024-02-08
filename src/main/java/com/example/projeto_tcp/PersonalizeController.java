@@ -29,13 +29,20 @@ public class PersonalizeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        instrument.getItems().addAll(Instruments.getInstrumentsList());
+        instrument.getItems().addAll(Instrument.getInstrumentsList());
         RythmSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 200, 0, 1));
         VolumeSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 0, 1));
     }
 
     @FXML
     void btListenMusic(ActionEvent event) {
+        int rythmValue = RythmSpinner.getValue();
+        int volumeValue = VolumeSpinner.getValue();
+        String firstInstrument = instrument.getValue();
+        HomeApplication.setMusicSettings(rythmValue, firstInstrument, volumeValue);
+        HomeApplication.createMusic();
+        HomeApplication.getMusic().generate();
+        HomeApplication.createPlayer();
         HomeApplication.changeScreen(ScreenNavigation.LISTEN);
     }
     @FXML

@@ -4,10 +4,13 @@ import javafx.stage.FileChooser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.UUID;
 
 public class HomeController {
     FileChooser fileChooser = new FileChooser();
@@ -29,9 +32,10 @@ public class HomeController {
 
     @FXML
     void btRandomText(ActionEvent event) {
-
+        String randomText = UUID.randomUUID().toString();
+        HomeApplication.setText(randomText);
+        HomeApplication.changeScreen(ScreenNavigation.PERSONALIZE);
     }
-
     @FXML
     void btSelectFile(ActionEvent event) {
         // Configura o filtro para aceitar apenas arquivos .txt
