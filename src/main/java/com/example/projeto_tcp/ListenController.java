@@ -14,13 +14,17 @@ public class ListenController {
     private Button buttonStart;
     @FXML
     // btGoEdition -> change the Screen from "Listen Screen" to "Edition Screen" when the "Generate New Music Button" is Pressed
-    void btGoHome(ActionEvent event) {
+    void btGoHome(ActionEvent event) throws InvalidMidiDataException, MidiUnavailableException {
+        buttonStart.setText("Play");
+        HomeApplication.getMusicPlayer().finish();
         HomeApplication.changeScreen(ScreenNavigation.HOME);
     }
 
     @FXML
     // btListenBack -> change the Screen from "Listen Screen" to "Personalize Screen" when the "Back Button" is Pressed
-    void btListenBack(ActionEvent event) {
+    void btListenBack(ActionEvent event) throws InvalidMidiDataException, MidiUnavailableException {
+        buttonStart.setText("Play");
+        HomeApplication.getMusicPlayer().finish();
         HomeApplication.changeScreen(ScreenNavigation.PERSONALIZE);
     }
 

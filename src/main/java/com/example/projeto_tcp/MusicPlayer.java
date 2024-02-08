@@ -54,6 +54,7 @@ public class MusicPlayer
     }
 
     public void finish() throws InvalidMidiDataException, MidiUnavailableException {
+        player.getManagedPlayer().finish();
         this.isPlay = false;
     }
 
