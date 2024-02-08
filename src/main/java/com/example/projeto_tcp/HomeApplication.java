@@ -28,6 +28,39 @@ public class HomeApplication extends Application {
     private static Scene listenScene;
 
     private static String text;
+
+    private static MusicSettings defaultSettings;
+    private static Music music;
+    private static MusicPlayer player;
+
+    public static void createMusic() {
+        if (text!=null && defaultSettings!=null){
+            music = new Music(defaultSettings, text);
+        }
+    }
+
+    public static Music getMusic() {
+        return music;
+    }
+
+    public static MusicPlayer getMusicPlayer() {
+        return player;
+    }
+
+    public static void createPlayer() {
+        if (music!=null) {
+            HomeApplication.player = new MusicPlayer(music);
+        }
+    }
+
+    public static MusicSettings getMusicSettings() {
+        return defaultSettings;
+    }
+
+    public static void setMusicSettings(int bpm, String firstInstrument, int volume) {
+        HomeApplication.defaultSettings = new MusicSettings(bpm, firstInstrument, volume, 5);
+    }
+
     // INITIALIZATION
     @Override
     public void start(Stage primaryStage) throws IOException {

@@ -18,10 +18,9 @@
    </Label>
    <AnchorPane prefHeight="574.0" prefWidth="684.0">
       <children>
-         <Button fx:id="randomButton" layoutX="298.0" layoutY="234.0" mnemonicParsing="false" onAction="#btRandomText" text="Random text" AnchorPane.bottomAnchor="310.0" AnchorPane.leftAnchor="298.0" AnchorPane.rightAnchor="296.0" AnchorPane.topAnchor="234.0" />
-         <Button fx:id="selectTextButton" layoutX="288.0" layoutY="138.0" mnemonicParsing="false" onAction="#btSelectFile" text="Select a text file" AnchorPane.bottomAnchor="406.0" AnchorPane.leftAnchor="288.0" AnchorPane.rightAnchor="287.0" AnchorPane.topAnchor="138.0" />
-         <Button fx:id="exitButton" layoutX="297.0" layoutY="409.0" mnemonicParsing="false" onAction="#btExit" text="Exit" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="297.0" AnchorPane.rightAnchor="297.0" AnchorPane.topAnchor="409.0" />
-         <Button fx:id="writeButton" layoutX="298.0" layoutY="331.0" mnemonicParsing="false" onAction="#btWriteMusic" text="Write a Music" AnchorPane.bottomAnchor="218.0" AnchorPane.leftAnchor="298.0" AnchorPane.rightAnchor="297.0" AnchorPane.topAnchor="331.0" />
+         <Button fx:id="randomButton" layoutX="297.0" layoutY="214.0" mnemonicParsing="false" onAction="#btRandomText" text="Random text" AnchorPane.bottomAnchor="331.59999999999997" AnchorPane.leftAnchor="297.0" AnchorPane.rightAnchor="297.40000000000003" AnchorPane.topAnchor="214.0" />
+         <Button fx:id="selectTextButton" layoutX="299.0" layoutY="125.0" mnemonicParsing="false" onAction="#btSelectFile" prefHeight="30.0" prefWidth="89.0" text="Select a text file" AnchorPane.bottomAnchor="420.6" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="297.79999999999995" AnchorPane.topAnchor="125.0" />
+         <Button fx:id="writeButton" layoutX="297.0" layoutY="303.0" mnemonicParsing="false" onAction="#btWriteMusic" prefHeight="30.0" prefWidth="89.0" text="Write a Music" AnchorPane.bottomAnchor="241.79999999999995" AnchorPane.leftAnchor="297.0" AnchorPane.rightAnchor="299.8" AnchorPane.topAnchor="303.0" />
       </children>
    </AnchorPane>
 </VBox>

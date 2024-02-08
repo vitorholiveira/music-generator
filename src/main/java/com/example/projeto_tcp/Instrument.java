@@ -1,14 +1,14 @@
 package com.example.projeto_tcp;
 
-public class Instruments {
-    // Constantes dos instrumentos (Strings)
+public class Instrument {
+    // INSTUMENTS CONSTANTS (STRINGS)
     public static final String BANJO = "Banjo";
     public static final String PIANO = "Piano";
     public static final String MARIMBA = "Marimba";
     public static final String TWEET = "Bird_Tweet";
     public static final String DRUM = "Taiko_Drum";
 
-    // Constantes para os caracteres que representam esses instrumentos
+    // INTRUMENTS CONSTANTS (CHAR)
     public static final char BANJO_CHAR = 'B';
     public static final char PIANO_CHAR = 'P';
     public static final char MARIMBA_CHAR = 'M';
